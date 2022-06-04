@@ -13,6 +13,8 @@
 		8D1E466A2849436B00847824 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D1E46682849436B00847824 /* Main.storyboard */; };
 		8D1E466C2849436C00847824 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D1E466B2849436C00847824 /* Assets.xcassets */; };
 		8D1E466F2849436C00847824 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D1E466D2849436C00847824 /* LaunchScreen.storyboard */; };
+		8D1E467728494A8A00847824 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1E467628494A8A00847824 /* SettingTableViewCell.swift */; };
+		8D57B410284C042800933F57 /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D57B40F284C042800933F57 /* SwitchTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		8D1E466B2849436C00847824 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8D1E466E2849436C00847824 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8D1E46702849436C00847824 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D1E467628494A8A00847824 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
+		8D57B40F284C042800933F57 /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,8 @@
 				8D1E46622849436B00847824 /* AppDelegate.swift */,
 				8D1E46642849436B00847824 /* SceneDelegate.swift */,
 				8D1E46662849436B00847824 /* ViewController.swift */,
+				8D1E467628494A8A00847824 /* SettingTableViewCell.swift */,
+				8D57B40F284C042800933F57 /* SwitchTableViewCell.swift */,
 				8D1E46682849436B00847824 /* Main.storyboard */,
 				8D1E466B2849436C00847824 /* Assets.xcassets */,
 				8D1E466D2849436C00847824 /* LaunchScreen.storyboard */,
@@ -140,6 +146,8 @@
 			files = (
 				8D1E46672849436B00847824 /* ViewController.swift in Sources */,
 				8D1E46632849436B00847824 /* AppDelegate.swift in Sources */,
+				8D57B410284C042800933F57 /* SwitchTableViewCell.swift in Sources */,
+				8D1E467728494A8A00847824 /* SettingTableViewCell.swift in Sources */,
 				8D1E46652849436B00847824 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -300,7 +308,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.my.Settings-screen";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.my.Settings-scr";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -328,7 +336,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.my.Settings-screen";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.my.Settings-scr";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
