@@ -1,15 +1,15 @@
 //
-//  SettingTableViewCell.swift
+//  SwitchTableViewCell.swift
 //  Settings screen
 //
-//  Created by Maksim Malofeev on 02/06/2022.
+//  Created by Maksim Malofeev on 05/06/2022.
 //
 
 import UIKit
 
-class SettingTableViewCell: UITableViewCell {
+class SwitchTableViewCell: UITableViewCell {
 
-    static let indentifier = "SettingTableViewCell"
+    static let indentifier = "SwitchTableViewCell"
 
     private let iconContainer: UIView = {
         let view = UIView()
@@ -32,22 +32,21 @@ class SettingTableViewCell: UITableViewCell {
         return lable
     }()
 
-    private let conditionLable: UILabel = {
-        let label = UILabel()
-        label.numberOfLines = 1
-        label.textAlignment = .right
-        return label
+    private let mySwitch: UISwitch = {
+        let mySwitch = UISwitch()
+        mySwitch.onTintColor = .systemBlue
+        return mySwitch
     }()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.addSubview(iconContainer)
         contentView.addSubview(lable)
-        contentView.addSubview(conditionLable)
+        contentView.addSubview(mySwitch)
         iconContainer.addSubview(iconImageView)
-        
+
         contentView.clipsToBounds = true
-        accessoryType = .disclosureIndicator
+        accessoryType = .none
     }
 
     required init?(coder: NSCoder) {
@@ -66,23 +65,24 @@ class SettingTableViewCell: UITableViewCell {
             width: imageSize,
             height: imageSize)
 
+        mySwitch.sizeToFit()
+        mySwitch.frame = CGRect(
+            x: contentView.frame.size.width - mySwitch.frame.size.width - 15,
+            y: (contentView.frame.size.height - mySwitch.frame.size.height) / 2,
+            width: mySwitch.frame.size.width,
+            height: mySwitch.frame.size.height)
+
         lable.frame = CGRect(
             x: 25 + iconContainer.frame.size.width,
             y: 0,
-            width: lable.intrinsicContentSize.width,
+            width: contentView.frame.size.width - 20 - iconContainer.frame.size.width,
             height: contentView.frame.size.height)
-
-        conditionLable.frame = CGRect(
-            x: iconContainer.frame.size.width + lable.frame.size.width - 5,
-            y: 0,
-            width: contentView.frame.size.width - iconContainer.frame.size.width - lable.frame.size.width,
-            height: lable.frame.size.height)
     }
 
-    public func configure(with model: SettingsOption) {
+    public func configure(with model: SettingsSwitchOption) {
         lable.text = model.title
-        conditionLable.text = model.titleConditionLable
         iconImageView.image = model.icon
         iconContainer.backgroundColor = model.iconBackgroundCOlor
     }
 }
+
