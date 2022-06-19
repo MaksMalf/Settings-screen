@@ -9,42 +9,62 @@ import UIKit
 
 class SettingsView: UIView {
 
-    private let tableView: UITableView = {
+    // MARK: - Configuration
+
+    func configureView(with models: [Section]) {
+        self.models = models
+        backgroundColor = .purple
+    }
+
+    // MARK: - Private properties
+    
+    private lazy var tableView: UITableView = {
         let table = UITableView(frame: .zero, style: .grouped)
         table.register(SettingTableViewCell.self, forCellReuseIdentifier: SettingTableViewCell.indentifier)
         table.register(SwitchTableViewCell.self, forCellReuseIdentifier: SwitchTableViewCell.reuseIdentifire)
+        table.translatesAutoresizingMaskIntoConstraints = false
+        table.dataSource = self
+        table.delegate = self
 
         return table
     }()
 
-    var models = [Section]()
+    private var models = [Section]()
 
     // MARK: - Initial
 
     override init(frame: CGRect) {
         super.init(frame: .zero)
-        commonInit()
+        setupHierarhy()
+        setupLayout()
     }
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        commonInit()
+        setupHierarhy()
+        setupLayout()
     }
 
-    private func commonInit() {
-        configure()
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return models.count
+    }
+
+    private func setupHierarhy() {
         addSubview(tableView)
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.frame = self.bounds
     }
 
+    private func setupLayout() {
+        tableView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        tableView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        tableView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+    }
 }
 
 extension SettingsView: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        models[section].options.count
+        return models[section].options.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -55,7 +75,7 @@ extension SettingsView: UITableViewDelegate, UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: SettingTableViewCell.indentifier, for: indexPath) as? SettingTableViewCell else {
                 return UITableViewCell()
             }
-            cell.configure(with: model)
+            cell.configure(with: model.self)
             return cell
         case .switchCell(let model):
             guard let cell = tableView.dequeueReusableCell(withIdentifier: SwitchTableViewCell.reuseIdentifire, for: indexPath) as? SwitchTableViewCell else {

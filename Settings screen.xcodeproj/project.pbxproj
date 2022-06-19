@@ -9,20 +9,22 @@
 /* Begin PBXBuildFile section */
 		8D1E46632849436B00847824 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1E46622849436B00847824 /* AppDelegate.swift */; };
 		8D1E46652849436B00847824 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1E46642849436B00847824 /* SceneDelegate.swift */; };
-		8D1E46672849436B00847824 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1E46662849436B00847824 /* ViewController.swift */; };
+		8D1E46672849436B00847824 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1E46662849436B00847824 /* SettingsViewController.swift */; };
 		8D1E466A2849436B00847824 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D1E46682849436B00847824 /* Main.storyboard */; };
 		8D1E466C2849436C00847824 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D1E466B2849436C00847824 /* Assets.xcassets */; };
 		8D1E466F2849436C00847824 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D1E466D2849436C00847824 /* LaunchScreen.storyboard */; };
 		8D1E467728494A8A00847824 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1E467628494A8A00847824 /* SettingTableViewCell.swift */; };
 		8D57B410284C042800933F57 /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D57B40F284C042800933F57 /* SwitchTableViewCell.swift */; };
 		8D6D3FD2285F51D300710F1F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6D3FD1285F51D300710F1F /* SettingsView.swift */; };
+		8D6D3FD4285F615400710F1F /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6D3FD3285F615400710F1F /* SettingsModel.swift */; };
+		8D6D3FD6285F618700710F1F /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6D3FD5285F618700710F1F /* Section.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8D1E465F2849436B00847824 /* Settings screen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Settings screen.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D1E46622849436B00847824 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D1E46642849436B00847824 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8D1E46662849436B00847824 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8D1E46662849436B00847824 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		8D1E46692849436B00847824 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8D1E466B2849436C00847824 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8D1E466E2849436C00847824 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -30,6 +32,8 @@
 		8D1E467628494A8A00847824 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		8D57B40F284C042800933F57 /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
 		8D6D3FD1285F51D300710F1F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		8D6D3FD3285F615400710F1F /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
+		8D6D3FD5285F618700710F1F /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,7 +51,6 @@
 			isa = PBXGroup;
 			children = (
 				8D1E46612849436B00847824 /* Settings screen */,
-				8D6D3FCD285F50BE00710F1F /* Resources */,
 				8D1E46602849436B00847824 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -63,6 +66,7 @@
 		8D1E46612849436B00847824 /* Settings screen */ = {
 			isa = PBXGroup;
 			children = (
+				8D6D3FCD285F50BE00710F1F /* Resources */,
 				8D6D3FCA285F509600710F1F /* Sources */,
 				8D6D3FCB285F50A100710F1F /* Scenes */,
 			);
@@ -102,6 +106,8 @@
 		8D6D3FCE285F50EF00710F1F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8D6D3FD3285F615400710F1F /* SettingsModel.swift */,
+				8D6D3FD5285F618700710F1F /* Section.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -118,7 +124,7 @@
 		8D6D3FD0285F50FD00710F1F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				8D1E46662849436B00847824 /* ViewController.swift */,
+				8D1E46662849436B00847824 /* SettingsViewController.swift */,
 				8D6D3FD1285F51D300710F1F /* SettingsView.swift */,
 			);
 			path = Controller;
@@ -195,11 +201,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D1E46672849436B00847824 /* ViewController.swift in Sources */,
+				8D1E46672849436B00847824 /* SettingsViewController.swift in Sources */,
 				8D1E46632849436B00847824 /* AppDelegate.swift in Sources */,
+				8D6D3FD6285F618700710F1F /* Section.swift in Sources */,
 				8D57B410284C042800933F57 /* SwitchTableViewCell.swift in Sources */,
 				8D6D3FD2285F51D300710F1F /* SettingsView.swift in Sources */,
 				8D1E467728494A8A00847824 /* SettingTableViewCell.swift in Sources */,
+				8D6D3FD4285F615400710F1F /* SettingsModel.swift in Sources */,
 				8D1E46652849436B00847824 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -349,7 +357,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6S5M6D9C92;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Settings screen/Info.plist";
+				INFOPLIST_FILE = "Settings screen/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -377,7 +385,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6S5M6D9C92;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Settings screen/Info.plist";
+				INFOPLIST_FILE = "Settings screen/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

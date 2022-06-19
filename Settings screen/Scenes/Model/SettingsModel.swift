@@ -1,59 +1,19 @@
 //
-//  ViewController.swift
+//  SettingsModel.swift
 //  Settings screen
 //
-//  Created by Maksim Malofeev on 02/06/2022.
+//  Created by Maksim Malofeev on 19/06/2022.
 //
 
+import Foundation
 import UIKit
 
-struct Section {
-    let options: [SettingsOptionType]
-}
+class SettingsModel {
 
-enum SettingsOptionType {
-    case staticCell(model: SettingsOption)
-    case switchCell(model: SettingsSwitchOption)
-}
+    func createModels() -> [Section] {
+        
+        var models = [Section]()
 
-struct SettingsSwitchOption {
-    let title: String
-    let icon: UIImage?
-    let iconBackgroundCOlor: UIColor
-    let handler: (() -> Void)
-}
-
-struct SettingsOption {
-    let title: String
-    let titleConditionLable: String?
-    let icon: UIImage?
-    let iconBackgroundCOlor: UIColor
-    let handler: (() -> Void)
-}
-
-class ViewController: UIViewController {
-
-//    private let tableView: UITableView = {
-//        let table = UITableView(frame: .zero, style: .grouped)
-//        table.register(SettingTableViewCell.self, forCellReuseIdentifier: SettingTableViewCell.indentifier)
-//        table.register(SwitchTableViewCell.self, forCellReuseIdentifier: SwitchTableViewCell.reuseIdentifire)
-//
-//        return table
-//    }()
-//
-//    var models = [Section]()
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        title = "Настройки"
-//        configure()
-//        view.addSubview(tableView)
-//        tableView.delegate = self
-//        tableView.dataSource = self
-//        tableView.frame = view.bounds
-    }
-
-    func configure() {
         models.append(Section(options: [
             .switchCell(model: SettingsSwitchOption(
                 title: "Авиарежим",
@@ -131,7 +91,7 @@ class ViewController: UIViewController {
         models.append(Section(options: [
             .staticCell(model: SettingsOption(
                 title: "Основные",
-                titleConditionLable: nil,
+                titleConditionLable: "\u{278A}",
                 icon: UIImage(systemName: "gear"),
                 iconBackgroundCOlor: .systemGray) {
                 print("Нажата ячейка 'Основные'")
@@ -165,47 +125,9 @@ class ViewController: UIViewController {
                 print("Нажата ячейка 'Универсальный доступ'")
             })
         ]))
-    }
 
-    func numberOfSections(in tableView: UITableView) -> Int {
-        models.count
+        return models
     }
 }
 
-extension ViewController: UITableViewDelegate, UITableViewDataSource {
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        models[section].options.count
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let model = models[indexPath.section].options[indexPath.row]
-
-        switch model.self {
-        case .staticCell(let model):
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: SettingTableViewCell.indentifier, for: indexPath) as? SettingTableViewCell else {
-                return UITableViewCell()
-            }
-            cell.configure(with: model)
-            return cell
-        case .switchCell(let model):
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: SwitchTableViewCell.reuseIdentifire, for: indexPath) as? SwitchTableViewCell else {
-                return UITableViewCell()
-            }
-            cell.configure(with: model)
-            return cell
-        }
-    }
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        let type = models[indexPath.section].options[indexPath.row]
-        switch type.self {
-        case .staticCell(let model):
-            model.handler()
-        case .switchCell(let model):
-            model.handler()
-        }
-    }
-}
 
