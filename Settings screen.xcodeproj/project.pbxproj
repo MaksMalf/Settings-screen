@@ -15,6 +15,7 @@
 		8D1E466F2849436C00847824 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D1E466D2849436C00847824 /* LaunchScreen.storyboard */; };
 		8D1E467728494A8A00847824 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1E467628494A8A00847824 /* SettingTableViewCell.swift */; };
 		8D57B410284C042800933F57 /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D57B40F284C042800933F57 /* SwitchTableViewCell.swift */; };
+		8D6D3FD2285F51D300710F1F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6D3FD1285F51D300710F1F /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		8D1E46702849436C00847824 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1E467628494A8A00847824 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		8D57B40F284C042800933F57 /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
+		8D6D3FD1285F51D300710F1F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +47,7 @@
 			isa = PBXGroup;
 			children = (
 				8D1E46612849436B00847824 /* Settings screen */,
+				8D6D3FCD285F50BE00710F1F /* Resources */,
 				8D1E46602849436B00847824 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -60,17 +63,65 @@
 		8D1E46612849436B00847824 /* Settings screen */ = {
 			isa = PBXGroup;
 			children = (
+				8D6D3FCA285F509600710F1F /* Sources */,
+				8D6D3FCB285F50A100710F1F /* Scenes */,
+			);
+			path = "Settings screen";
+			sourceTree = "<group>";
+		};
+		8D6D3FCA285F509600710F1F /* Sources */ = {
+			isa = PBXGroup;
+			children = (
 				8D1E46622849436B00847824 /* AppDelegate.swift */,
 				8D1E46642849436B00847824 /* SceneDelegate.swift */,
-				8D1E46662849436B00847824 /* ViewController.swift */,
-				8D1E467628494A8A00847824 /* SettingTableViewCell.swift */,
-				8D57B40F284C042800933F57 /* SwitchTableViewCell.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		8D6D3FCB285F50A100710F1F /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				8D6D3FD0285F50FD00710F1F /* Controller */,
+				8D6D3FCF285F50F700710F1F /* View */,
+				8D6D3FCE285F50EF00710F1F /* Model */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		8D6D3FCD285F50BE00710F1F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				8D1E46682849436B00847824 /* Main.storyboard */,
 				8D1E466B2849436C00847824 /* Assets.xcassets */,
 				8D1E466D2849436C00847824 /* LaunchScreen.storyboard */,
 				8D1E46702849436C00847824 /* Info.plist */,
 			);
-			path = "Settings screen";
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		8D6D3FCE285F50EF00710F1F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8D6D3FCF285F50F700710F1F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8D1E467628494A8A00847824 /* SettingTableViewCell.swift */,
+				8D57B40F284C042800933F57 /* SwitchTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8D6D3FD0285F50FD00710F1F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8D1E46662849436B00847824 /* ViewController.swift */,
+				8D6D3FD1285F51D300710F1F /* SettingsView.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,6 +198,7 @@
 				8D1E46672849436B00847824 /* ViewController.swift in Sources */,
 				8D1E46632849436B00847824 /* AppDelegate.swift in Sources */,
 				8D57B410284C042800933F57 /* SwitchTableViewCell.swift in Sources */,
+				8D6D3FD2285F51D300710F1F /* SettingsView.swift in Sources */,
 				8D1E467728494A8A00847824 /* SettingTableViewCell.swift in Sources */,
 				8D1E46652849436B00847824 /* SceneDelegate.swift in Sources */,
 			);

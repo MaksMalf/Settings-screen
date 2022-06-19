@@ -33,24 +33,24 @@ struct SettingsOption {
 
 class ViewController: UIViewController {
 
-    private let tableView: UITableView = {
-        let table = UITableView(frame: .zero, style: .grouped)
-        table.register(SettingTableViewCell.self, forCellReuseIdentifier: SettingTableViewCell.indentifier)
-        table.register(SwitchTableViewCell.self, forCellReuseIdentifier: SwitchTableViewCell.reuseIdentifire)
-
-        return table
-    }()
-
-    var models = [Section]()
+//    private let tableView: UITableView = {
+//        let table = UITableView(frame: .zero, style: .grouped)
+//        table.register(SettingTableViewCell.self, forCellReuseIdentifier: SettingTableViewCell.indentifier)
+//        table.register(SwitchTableViewCell.self, forCellReuseIdentifier: SwitchTableViewCell.reuseIdentifire)
+//
+//        return table
+//    }()
+//
+//    var models = [Section]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Настройки"
-        configure()
-        view.addSubview(tableView)
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.frame = view.bounds
+//        configure()
+//        view.addSubview(tableView)
+//        tableView.delegate = self
+//        tableView.dataSource = self
+//        tableView.frame = view.bounds
     }
 
     func configure() {
