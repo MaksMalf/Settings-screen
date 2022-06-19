@@ -36,7 +36,7 @@ class ViewController: UIViewController {
     private let tableView: UITableView = {
         let table = UITableView(frame: .zero, style: .grouped)
         table.register(SettingTableViewCell.self, forCellReuseIdentifier: SettingTableViewCell.indentifier)
-        table.register(SwitchTableViewCell.self, forCellReuseIdentifier: SwitchTableViewCell.indentifier)
+        table.register(SwitchTableViewCell.self, forCellReuseIdentifier: SwitchTableViewCell.reuseIdentifire)
 
         return table
     }()
@@ -189,7 +189,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             cell.configure(with: model)
             return cell
         case .switchCell(let model):
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: SwitchTableViewCell.indentifier, for: indexPath) as? SwitchTableViewCell else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: SwitchTableViewCell.reuseIdentifire, for: indexPath) as? SwitchTableViewCell else {
                 return UITableViewCell()
             }
             cell.configure(with: model)

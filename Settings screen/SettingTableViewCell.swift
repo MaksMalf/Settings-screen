@@ -11,7 +11,7 @@ class SettingTableViewCell: UITableViewCell {
 
     static let indentifier = "SettingTableViewCell"
 
-    private let iconContainer: UIView = {
+    let iconContainer: UIView = {
         let view = UIView()
         view.clipsToBounds = true
         view.layer.cornerRadius = 8
@@ -19,14 +19,14 @@ class SettingTableViewCell: UITableViewCell {
         return view
     }()
 
-    private let iconImageView: UIImageView = {
+    let iconImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.tintColor = .white
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
 
-    private let lable: UILabel = {
+    let lable: UILabel = {
         let lable = UILabel()
         lable.numberOfLines = 1
         return lable
