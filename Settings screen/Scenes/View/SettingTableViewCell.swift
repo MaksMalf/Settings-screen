@@ -75,14 +75,18 @@ class SettingTableViewCell: UITableViewCell {
         conditionLable.frame = CGRect(
             x: iconContainer.frame.size.width + lable.frame.size.width - 5,
             y: 0,
-            width: contentView.frame.size.width - iconContainer.frame.size.width - lable.frame.size.width,
+            width: contentView.frame.size.width - iconContainer.frame.size.width - lable.frame.size.width ,
             height: lable.frame.size.height)
     }
 
     public func configure(with model: SettingsOption) {
         lable.text = model.title
-        conditionLable.text = model.titleConditionLable
         iconImageView.image = model.icon
         iconContainer.backgroundColor = model.iconBackgroundCOlor
+        if model.title == "Основные" {
+            conditionLable.textColor = .systemRed
+            conditionLable.font = .systemFont(ofSize: 30)
+        }
+        conditionLable.text = model.titleConditionLable
     }
 }
